@@ -10,7 +10,7 @@ body {
     border-radius: 9px;
 }
 
-.res {
+.input {
     display: block;
     width: 240px;
     height: 50px;
@@ -23,7 +23,7 @@ body {
     padding-top: 20px;
 }
 
-.res-text {
+.input-text {
     color: #fff;
     font-size: 22px;
     text-align: left;
