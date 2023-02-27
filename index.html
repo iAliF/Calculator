@@ -7,7 +7,7 @@
 <body>
 <div class="calc">
     <div class="res">
-        <div class="res-text" id="res"></div>
+        <div class="res-text" id="input"></div>
     </div>
     <div class="row">
         <button class="btn" onclick="addToRes(this.value);" value="7">7</button>
@@ -36,32 +36,42 @@
     <div class="row">
         <button class="btn btn-o" onclick="reset();">C</button>
         <button class="btn" onclick="addToRes(this.value);" value=".">.</button>
-        <button class="btn btn-o btn-l" onclick="reseult();">=</button>
+        <button class="btn btn-o btn-l" onclick="showResult();">=</button>
     </div>
 </div>
 <script crossorigin="anonymous"
         integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
         referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script>
-    a = false;
+    append = false;
+    input = $("#input");
 
     function addToRes(val) {
-        if (a) {
-            $("#res").html(val);
-            a = false;
+        if (append) {
+            setInputText(val);
+            append = false;
         } else {
-            $("#res").html($("#res").html() + val);
+            setInputText(getInputText() + val);
         }
     }
 
     function reset() {
-        $("#res").html("");
+        setInputText("");
     }
 
-    function reseult() {
-        $("#res").html(eval($("#res").html()));
-        a = true;
+    function showResult() {
+        setInputText(eval(getInputText()))
+        append = true;
     }
+
+    function getInputText() {
+        return input.html();
+    }
+
+    function setInputText(text) {
+        input.html(text);
+    }
+
 </script>
 </body>
 </html>
