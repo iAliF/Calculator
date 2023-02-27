@@ -27,11 +27,11 @@ body {
     color: #fff;
     font-size: 22px;
     text-align: left;
-    margin: 0px 8px;
+    margin: 0 8px;
 }
 
 .row {
-    width: 260;
+    width: 260px;
     margin: 10px 18px;
 }
 
@@ -42,7 +42,6 @@ body {
     color: #fff;
     border-radius: 6px;
     border: none;
-    font-style: 18px;
     margin: 4px;
     font-size: 20px;
 }
@@ -61,5 +60,5 @@ body {
 }
 
 .btn-l {
-    width: 110px;
+    width: 114px;
 }
