@@ -1,62 +1,65 @@
 <html>
-	<head>
-		<title>Calculator</title>
-		<link href="css/style.css" rel="stylesheet">
-		<meta charset="utf-8">
-	</head>
-	<body>
-		<div class="calc">
-		<div class="res">
-			<div class="res-text" id="res"></div>
-		</div>
-			<div class="row">
-				<button class="btn" value="7" onclick="addToRes(this.value);">7</button>
-				<button class="btn" value="8" onclick="addToRes(this.value);">8</button>
-				<button class="btn" value="9" onclick="addToRes(this.value);">9</button>
-				<button class="btn btn-o" value="+" onclick="addToRes(this.value);">+</button>
-			</div>
-			<div class="row">
-				<button class="btn" value="4" onclick="addToRes(this.value);">4</button>
-				<button class="btn" value="5" onclick="addToRes(this.value);">5</button>
-				<button class="btn" value="6" onclick="addToRes(this.value);">6</button>
-				<button class="btn btn-o" value="-" onclick="addToRes(this.value);">-</button>
-			</div>
-			<div class="row">
-				<button class="btn" value="1" onclick="addToRes(this.value);">1</button>
-				<button class="btn" value="2" onclick="addToRes(this.value);">2</button>
-				<button class="btn" value="3" onclick="addToRes(this.value);">3</button>
-				<button class="btn btn-o" value="*" onclick="addToRes(this.value);">x</button>
-			</div>
-			<div class="row">
-				<button class="btn" value="0" onclick="addToRes(this.value);">0</button>
-				<button class="btn" value="00" onclick="addToRes(this.value);">00</button>
-				<button class="btn" value="000" onclick="addToRes(this.value);">000</button>
-				<button class="btn btn-o" value="/" onclick="addToRes(this.value);">÷</button>
-			</div>
-			<div class="row">
-				<button class="btn btn-o" onclick="reset();">C</button>
-				<button class="btn" value="." onclick="addToRes(this.value);">.</button>
-				<button class="btn btn-o btn-l" onclick="reseult();">=</button>
-			</div>
-		</div>
-	<script src="js/jquery.js"></script>
-	<script> 
-		a = false;
-		function addToRes(val){
-			if (a) {
-				$("#res").html(val);
-				a = false;
-			}else{
-				$("#res").html( $("#res").html() + val);
-			}
-		}
-		function reset(){
-			$("#res").html("");
-		}
-		function reseult(){
-			$("#res").html(eval($("#res").html()));
-			a = true;
-		}
-	</script>
-	</body>
+<head>
+    <title>Calculator</title>
+    <link href="css/style.css" rel="stylesheet">
+    <meta charset="utf-8">
+</head>
+<body>
+<div class="calc">
+    <div class="res">
+        <div class="res-text" id="res"></div>
+    </div>
+    <div class="row">
+        <button class="btn" onclick="addToRes(this.value);" value="7">7</button>
+        <button class="btn" onclick="addToRes(this.value);" value="8">8</button>
+        <button class="btn" onclick="addToRes(this.value);" value="9">9</button>
+        <button class="btn btn-o" onclick="addToRes(this.value);" value="+">+</button>
+    </div>
+    <div class="row">
+        <button class="btn" onclick="addToRes(this.value);" value="4">4</button>
+        <button class="btn" onclick="addToRes(this.value);" value="5">5</button>
+        <button class="btn" onclick="addToRes(this.value);" value="6">6</button>
+        <button class="btn btn-o" onclick="addToRes(this.value);" value="-">-</button>
+    </div>
+    <div class="row">
+        <button class="btn" onclick="addToRes(this.value);" value="1">1</button>
+        <button class="btn" onclick="addToRes(this.value);" value="2">2</button>
+        <button class="btn" onclick="addToRes(this.value);" value="3">3</button>
+        <button class="btn btn-o" onclick="addToRes(this.value);" value="*">x</button>
+    </div>
+    <div class="row">
+        <button class="btn" onclick="addToRes(this.value);" value="0">0</button>
+        <button class="btn" onclick="addToRes(this.value);" value="00">00</button>
+        <button class="btn" onclick="addToRes(this.value);" value="000">000</button>
+        <button class="btn btn-o" onclick="addToRes(this.value);" value="/">÷</button>
+    </div>
+    <div class="row">
+        <button class="btn btn-o" onclick="reset();">C</button>
+        <button class="btn" onclick="addToRes(this.value);" value=".">.</button>
+        <button class="btn btn-o btn-l" onclick="reseult();">=</button>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+    a = false;
+
+    function addToRes(val) {
+        if (a) {
+            $("#res").html(val);
+            a = false;
+        } else {
+            $("#res").html($("#res").html() + val);
+        }
+    }
+
+    function reset() {
+        $("#res").html("");
+    }
+
+    function reseult() {
+        $("#res").html(eval($("#res").html()));
+        a = true;
+    }
+</script>
+</body>
 </html>
